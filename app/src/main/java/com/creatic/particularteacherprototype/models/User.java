@@ -10,7 +10,6 @@ public class User {
     String username;
     String email;
     String password;
-    String document;
     String phone;
     String avatar;
     String banner;
@@ -53,14 +52,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getDocument() {
-        return document;
-    }
-
-    public void setDocument(String document) {
-        this.document = document;
     }
 
     public String getPhone() {
