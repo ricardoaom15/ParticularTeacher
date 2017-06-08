@@ -14,6 +14,18 @@ public class User {
     String avatar;
     String banner;
 
+    public User() {
+    }
+
+    public User(String name, String username, String email, String password, String phone) {
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+    }
+
     public long getId() {
         return id;
     }
@@ -76,5 +88,17 @@ public class User {
 
     public void setBanner(String banner) {
         this.banner = banner;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

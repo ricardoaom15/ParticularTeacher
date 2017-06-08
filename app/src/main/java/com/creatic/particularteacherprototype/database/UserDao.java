@@ -60,6 +60,7 @@ public class UserDao {
         contentValues.put(COLUMN_PHONE, user.getPhone());
         contentValues.put(COLUMN_AVATAR, user.getAvatar());
         contentValues.put(COLUMN_BANNER, user.getBanner());
+
         long id = sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
         user.setId(id);
         boolean result = (id==-1) ? false : true;
@@ -111,4 +112,6 @@ public class UserDao {
         }
         return userList;
     }
+
+
 }

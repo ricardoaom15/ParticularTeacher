@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 
 public class SplashScreen extends AppCompatActivity {
 
-    public static final int segundos=5;
+    public static final int segundos=3;
     public  static final int milisegundos = segundos*1000;
     private ProgressBar pbProgreso;
     public static final int delay=2;

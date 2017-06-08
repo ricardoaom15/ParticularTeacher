@@ -93,15 +93,23 @@
     <string name="title_activity_user_login">Login</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_usuario">Usuario</string>
-    <string name="prompt_password">Password </string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Aceptar</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
+    <string name="first_title">You need to have an account for</string>
+    <string name="second_title">Launch the application</string>
+    <string name="usuario">Username</string>
+    <string name="password">Password </string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="did_you_forget_your_password">Did you forget your password?</string>
     <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="text_create_account">Create Account</string>
+
+    <!-- Strings related to registry -->
+    <string name="title_activity_user_registry">Registry</string>
+    <string name="first_title_registry">Fine choice!</string>
+    <string name="second_title_registry">You are gonna love our app</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="action_registry">Registry</string>
+
 </resources>
