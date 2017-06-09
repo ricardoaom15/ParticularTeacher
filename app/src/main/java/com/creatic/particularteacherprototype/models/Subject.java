@@ -8,6 +8,13 @@ public class Subject {
     long id;
     String title;
 
+    public Subject() {
+    }
+
+    public Subject(String title) {
+        this.title = title;
+    }
+
     public long getId() {
         return id;
     }

@@ -15,10 +15,10 @@ import java.util.List;
  * Created by RicardoAndrés on 07/06/2017.
  */
 
-public class OffertAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+public class OfferAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
 
     public interface OnItemClick{
-        void onClick(View v);
+        void onOfferClick(View v);
     }
 
     Context context;
@@ -26,7 +26,7 @@ public class OffertAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     List<Offer> offerList;
     View conView;
 
-    public OffertAdapter(Context context, OnItemClick onItemClick, List<Offer> offerList) {
+    public OfferAdapter(Context context, OnItemClick onItemClick, List<Offer> offerList) {
         this.context = context;
         this.onItemClick = onItemClick;
         this.offerList = offerList;
@@ -50,7 +50,7 @@ public class OffertAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onClick(View v) {
-        onItemClick.onClick(v);
+        onItemClick.onOfferClick(v);
     }
 
     @Override

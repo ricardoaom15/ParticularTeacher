@@ -24,6 +24,9 @@ public class SubjectDao {
     public static final String SQL_CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_TITLE + " VARCHAR)";
+
+    public static final String SQL_INSERT_INITIAL_VALUES = "INSERT INTO " + TABLE_NAME + " VALUES";
+
     //endregion
 
     SQLiteDatabase sqLiteDatabase;
