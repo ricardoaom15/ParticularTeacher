@@ -1,13 +1,20 @@
 package com.creatic.particularteacherprototype;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -36,7 +43,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements SubjectAdapter.OnItemClick, OfferAdapter.OnItemClick {
+public class MainActivity extends AppCompatActivity implements SubjectAdapter.OnItemClick, OfferAdapter.OnItemClick, View.OnClickListener {
 
     private static final Integer TIMER_DURATION = 2500;
 
@@ -80,14 +87,7 @@ public class MainActivity extends AppCompatActivity implements SubjectAdapter.On
 
         startSlider();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        binding.fab.setOnClickListener(this);
     }
 
     @Override
@@ -96,11 +96,11 @@ public class MainActivity extends AppCompatActivity implements SubjectAdapter.On
         loadData();
     }
 
-    private void loadData(){
+    private void loadData() {
 
         L.subjectStaticList.clear();
         List<Subject> subjects = subjectDao.selectAll();
-        if(subjects.size() == 0){
+        if (subjects.size() == 0) {
             subjects.add(new Subject("Matematicas"));
             subjects.add(new Subject("Ciencias Naturales"));
             subjects.add(new Subject("Lenguas"));
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements SubjectAdapter.On
     @Override
     public void onSubjectClick(View v) {
         int position = binding.mainContent.mainSubjectList.getChildAdapterPosition(v);
-        Toast.makeText(this, ""+L.subjectStaticList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "" + L.subjectStaticList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements SubjectAdapter.On
 
     }
 
-    private void startSlider(){
+    private void startSlider() {
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements SubjectAdapter.On
         }, 0, TIMER_DURATION);
     }
 
-    private String getRandomImage(){
+    private String getRandomImage() {
         String[] urls = {"http://www.artsfon.com/large/201504/68395.jpg",
                 "https://s-media-cache-ak0.pinimg.com/736x/cf/1d/3f/cf1d3fe48d2707aa2c7e8d20d795e6ef.jpg",
                 "http://www.deafacademy2013.com/wp-content/uploads/2017/05/635729543467663355-385689442_tumblr_static_wallpaper__book_by_analaurasam-d6cak0w.imgopt1000x70.jpg"};
@@ -196,4 +196,16 @@ public class MainActivity extends AppCompatActivity implements SubjectAdapter.On
 
         return urls[position];
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab:
+                Intent intent = new Intent(MainActivity.this, OfferRegitryActivity.class);
+                startActivity(intent);
+                break;
+
+        }
+    }
 }
+

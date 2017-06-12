@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/offer_det_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Titulo"
+        style="@style/Base.TextAppearance.AppCompat.Headline"/>
+
+    <TextView
+        android:id="@+id/offer_det_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$30.000"
+        style="@style/Base.TextAppearance.AppCompat.Subhead"/>
+
+    <Button
+        android:id="@+id/offer_det_teacher_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Teacher Profile"/>
+
+</LinearLayout>
