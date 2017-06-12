@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp">
+<layout>
 
-    <TextView
-        android:id="@+id/offer_det_title"
+    <data>
+
+        <variable
+            name="offer"
+            type="com.creatic.particularteacherprototype.models.Offer"/>
+
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Titulo"
-        style="@style/Base.TextAppearance.AppCompat.Headline"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <TextView
-        android:id="@+id/offer_det_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="$30.000"
-        style="@style/Base.TextAppearance.AppCompat.Subhead"/>
+        <TextView
+            android:id="@+id/offer_det_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{offer.title}"
+            style="@style/Base.TextAppearance.AppCompat.Headline"/>
 
-    <Button
-        android:id="@+id/offer_det_teacher_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Teacher Profile"/>
+        <TextView
+            android:id="@+id/offer_det_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{"$ " + String.valueOf(offert.price)}'
+            style="@style/Base.TextAppearance.AppCompat.Subhead"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/offer_det_teacher_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teacher Profile"/>
+
+    </LinearLayout>
+
+</layout>

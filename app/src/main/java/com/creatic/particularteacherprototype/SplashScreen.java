@@ -33,7 +33,7 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Intent intent=new Intent(SplashScreen.this,MainActivity.class);
+                Intent intent=new Intent(SplashScreen.this, UserLoginActivity.class);
                 startActivity(intent);
 
             }

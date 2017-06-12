@@ -151,7 +151,10 @@ public class MainActivity extends AppCompatActivity implements SubjectAdapter.On
 
     @Override
     public void onOfferClick(View v) {
-
+        int position = binding.mainContent.mainOfferList.getChildAdapterPosition(v);
+        Intent intent = new Intent(MainActivity.this, OfferDetailActivity.class);
+        intent.putExtra("pos", position);
+        startActivity(intent);
     }
 
     private void startSlider() {
